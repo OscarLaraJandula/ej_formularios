@@ -8,7 +8,8 @@
             <th class="col-sm-2">Grupo</th>
             <th class="col-sm-2">Nº de aula</th>
             <th class="col-sm-2">Nº de alumnos</th>
-            <th class="col-sm-6">Tutor del grupo</th>
+            <th class="col-sm-5">Tutor del grupo</th>
+            <th class="col-sm-1"></th>
         </thead>
         <tbody>
             {% for grupo in grupos %}
@@ -17,6 +18,7 @@
                     <td>{{ grupo[0].aula }}</td>
                     <td>{{ grupo[1] }}</td>
                     <td>{{ grupo[0].tutor }}</td>
+                    <td><a href="{{ path('modificar_grupos', {'descripcion': grupo[0].descripcion}) }}" class="btn btn-info btn-xs" title="Modificar"><i class="fa fa-pencil"></i></a></td>
                 </tr>
             {% endfor %}
         </tbody>

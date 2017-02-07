@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Grupo;
 use Doctrine\ORM\EntityManager;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -30,6 +31,22 @@ class GrupoController extends Controller
 
         return $this->render('grupo/listar.html.twig', [
             'grupos' => $grupos
+        ]);
+    }
+
+    /**
+     * @Route("/grupos/modificar/{descripcion}", name="modificar_grupos")
+     */
+    public function formGrupoAction(Request $request, Grupo $grupo)
+    {
+
+        /** @var EntityManager $em */
+        $em = $this->getDoctrine()->getManager();
+
+
+
+        return $this->render('grupo/form.html.twig', [
+            'grupo' => $grupo
         ]);
     }
 }
