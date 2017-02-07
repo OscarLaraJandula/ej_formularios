@@ -3,4 +3,23 @@
 {% block content %}
     <h1>Listado de Grupos</h1>
 
+    <table class="table table-bordered table-responsive table-striped table-hover">
+        <thead>
+            <th class="col-sm-2">Grupo</th>
+            <th class="col-sm-2">Nº de aula</th>
+            <th class="col-sm-2">Nº de alumnos</th>
+            <th class="col-sm-6">Tutor del grupo</th>
+        </thead>
+        <tbody>
+            {% for grupo in grupos %}
+                <tr>
+                    <td>{{ grupo[0].descripcion }}</td>
+                    <td>{{ grupo[0].aula }}</td>
+                    <td>{{ grupo[1] }}</td>
+                    <td>{{ grupo[0].tutor }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
 {% endblock %}
