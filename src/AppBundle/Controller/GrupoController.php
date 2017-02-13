@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Grupo;
+use AppBundle\Form\Type\GrupoType;
 use Doctrine\ORM\EntityManager;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -43,10 +44,13 @@ class GrupoController extends Controller
         /** @var EntityManager $em */
         $em = $this->getDoctrine()->getManager();
 
+        $form =$this->createForm(GrupoType::class, $grupo);
+
 
 
         return $this->render('grupo/form.html.twig', [
-            'grupo' => $grupo
+            'grupo' => $grupo,
+            'form' => $form->createView()
         ]);
     }
 }
