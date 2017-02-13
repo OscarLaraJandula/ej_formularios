@@ -46,7 +46,11 @@ class GrupoController extends Controller
 
         $form =$this->createForm(GrupoType::class, $grupo);
 
+        $form->handleRequest($request);
 
+        if($form->isSubmitted() && $form->isValid()) {
+            $em->flush();
+        }
 
         return $this->render('grupo/form.html.twig', [
             'grupo' => $grupo,
