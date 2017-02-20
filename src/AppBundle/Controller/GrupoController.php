@@ -54,7 +54,7 @@ class GrupoController extends Controller
 
         return $this->render('grupo/form.html.twig', [
             'grupo' => $grupo,
-            'form' => $form->createView()
+            'formulario' => $form->createView()
         ]);
     }
 }

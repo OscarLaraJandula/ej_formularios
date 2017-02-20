@@ -21,12 +21,6 @@ class GrupoType extends AbstractType
             ->add('tutor', null, [
                 'placeholder' => 'No hay ninguno asignado',
                 'expanded' => false
-            ])
-            ->add('enviar', SubmitType::class, [
-                'label' => 'Guardar cambios',
-                'attr' => [
-                    'class' => 'btn btn-success'
-                ]
             ]);
     }
     public function configureOptions(OptionsResolver $resolver)
